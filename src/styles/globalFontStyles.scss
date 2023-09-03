@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    font-family: "Inter",sans-serif;
+    --title-1: 38px;
+    --title-2: 16px;
+    --headline: 12px;
+    --headline-bold: 12px;
+    --paragraph: 16px;
+
+    --font-weight-bold: bold;
+    --font-weight-regular: normal; 
+} 
+
+.title {
+    font-size: var(--title-1);
+    font-weight:var(--font-weight-bold) ;
+}
+
+.title-secundary {
+    font-size: var(--title-2);
+    font-weight: var(--font-weight-bold);
+}
+
+.headline {
+    font-size: var(--headline);
+    font-weight: var(--font-weight-regular);
+
+}
+
+.headline-bold {
+    font-size: var(--headline-bold);
+    font-weight: var(--font-weight-bold);
+
+}
+
+.paragraph {
+    font-size: var(--paragraph);
+    font-weight: var(--font-weight-regular);
+}

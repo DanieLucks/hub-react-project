@@ -1,0 +1,24 @@
+form {
+    background-color: var(--color-gray-3);
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+.formHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin: 2rem 0px 3rem;
+
+    h1 {
+        margin: 0px;
+        color: var(--color-gray-0);
+    }
+    p {
+        margin: 0px;
+        color: var(--color-gray-1);
+    }
+}
