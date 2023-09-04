@@ -3,7 +3,7 @@ import "./styles/globalButtonsStyles.scss"
 import "./styles/globalFontStyles.scss"
 import "./styles/globalStyles.scss"
 import "./styles/App.scss"
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
 
 

@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import { toast as showToast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast as showToast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { api } from "../services/api";
 import { useNavigate } from "react-router-dom";
 
@@ -27,33 +27,33 @@ export const AppProvider = ({children}) => {
 
     const userLogin = async ( formData ) => {
         try {
-            const { data } = await api.post('/sessions', formData);
+            const { data } = await api.post("/sessions", formData);
 
             const token = data.token;
             localStorage.setItem("@KenzieHub_token", token);
 
             setUser( data.user );
-            navigate('/dashboard')
+            navigate("/dashboard")
         } catch ( error ) {
             console.log(error);
-            toast('Ops! Algo deu errado');
+            toast("Ops! Algo deu errado");
         }
     }
 
     const userRegister = async ( formData ) => {
         try {
-            const { data } = await api.post('/users',formData);
-            toast('Cadastro realizado com Sucesso!');
+            const { data } = await api.post("/users",formData);
+            toast("Cadastro realizado com Sucesso!");
         } catch ( error ) {
             console.log(error)
-            toast('Ops! Algo deu errado');
+            toast("Ops! Algo deu errado");
         }
     }
 
     const exit = () => {
         localStorage.clear()
         setUser(null)
-        navigate('./')
+        navigate("./")
     }
 
     useEffect(() => {
@@ -62,18 +62,18 @@ export const AppProvider = ({children}) => {
             const token = localStorage.getItem("@KenzieHub_token");
 
             if (token) {
-            api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
-            const response = await api.get('/profile');
+            const response = await api.get("/profile");
             setUser(response.data);
-            navigate('/dashboard');
+            navigate("/dashboard");
             } else {
-            navigate('/');
+            navigate("/");
             }
         } catch (error) {
             console.log(error);
             localStorage.clear();
-            navigate('/');
+            navigate("/");
         }
 };
 

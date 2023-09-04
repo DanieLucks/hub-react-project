@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
 import { LoginForm } from "../../components/LoginForm"
 import "./style.scss"
 
