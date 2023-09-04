@@ -3,14 +3,14 @@ import "./styles/globalButtonsStyles.scss"
 import "./styles/globalFontStyles.scss"
 import "./styles/globalStyles.scss"
 import "./styles/App.scss"
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 
 
 const App = () => {
   return (
     <>
-    <RoutesMain toast={ toast }/>
+    <RoutesMain/>
     <ToastContainer />
     </>
   )

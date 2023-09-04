@@ -2,16 +2,18 @@ import { Route, Routes } from "react-router-dom"
 import { Login } from "../pages/Login"
 import { Register } from "../pages/Register"
 import { Dashboard } from "../pages/Dashboard"
-import { useState } from "react"
+import { ProtectedRoutes } from "../components/ProtectedRoutes"
 
-export const RoutesMain = ( { toast }) => {
-    const [user, setUser] = useState(null);
 
+export const RoutesMain = () => {
     return (
         <Routes>
-            <Route path="/" element={ <Login user={ user } setUser={ setUser } toast={ toast } /> } />
-            <Route path="/register" element={ <Register toast={ toast }/> } />
-            <Route path="/dashboard" element={ <Dashboard user={ user } setUser={ setUser } /> } />
+            <Route path="/" element={ <Login/> } />
+            <Route path="/register" element={ <Register/> } />
+            <Route path="/dashboard" element={<ProtectedRoutes/>}>
+                <Route index element={ <Dashboard/> } />
+            </Route>
+            
         </Routes>
     )
 } 

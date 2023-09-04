@@ -1,22 +1,10 @@
-import { useNavigate } from "react-router-dom"
 import "./style.scss"
-import { useEffect } from "react"
+import { useContext } from "react"
+import { AppContext } from "../../providers/appContext"
 
-export const Dashboard = ( { user, setUser } ) => {
+export const Dashboard = () => {
 
-    const navigate = useNavigate()
-
-    const exit = () => {
-        localStorage.clear()
-        setUser(null)
-        navigate('/')
-    }
-
-    useEffect(() => {
-        if (!localStorage.getItem("@KenzieHub_token")) {
-            navigate('/');
-        }
-    }, []);
+    const { user, exit } = useContext(AppContext);
 
     return (
         <>
@@ -25,8 +13,8 @@ export const Dashboard = ( { user, setUser } ) => {
             <button onClick={ exit } className="button_gray">Sair</button>
         </header>
         <div className="infos">
-            <h3>Olá, { user ? user.user.name : "Usuário não identificado"}</h3>
-            <p>{ user ? user.user.course_module : null}</p>
+            <h3>Olá, { user ? user.name : "Usuário não identificado"}</h3>
+            <p>{ user ? user.course_module : null}</p>
         </div>
         <h3>{`Que pena! estamos em desenvolvimento :(`} </h3>
         <p>Nossa aplicação está em desenvolvimento, em breve teremos novidades</p>

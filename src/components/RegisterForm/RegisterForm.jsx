@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formSchema } from "./formSchema";
@@ -6,16 +6,17 @@ import { Input } from "../Input";
 import { InputText } from "../Input/InputText";
 import { InputSelect } from "../Input/InputSelect";
 import "./RegisterForm.scss"
+import { AppContext } from "../../providers/appContext";
 
-export const RegisterForm = ( { userRegister }) => {
+export const RegisterForm = ( ) => {
+    const { userRegister } = useContext(AppContext);
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm({
         resolver: zodResolver(formSchema)
     });
 
     const submit = (formData) => {
-        userRegister(formData); 
-        console.log(formData);
+        userRegister(formData);
         reset();
     }
 

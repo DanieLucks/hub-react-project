@@ -3,8 +3,13 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { formSchema } from "./formSchema"
 import "./style.scss"
+import { useContext } from "react"
+import { AppContext } from "../../providers/appContext"
+import { useNavigate } from "react-router-dom"
 
-export const LoginForm = ({ userLogin }) => {
+export const LoginForm = () => {
+    const { userLogin } = useContext(AppContext)
+
     const { register, handleSubmit, formState: { errors }, reset} = useForm({
         resolver: zodResolver(formSchema)
     })
