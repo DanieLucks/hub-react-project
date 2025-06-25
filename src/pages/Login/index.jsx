@@ -6,7 +6,7 @@ export const Login = () => {
     return (
         <>
         <header className="logo">
-            <h3>Kenzie Hub</h3>
+            <h3>DyLuck Hub</h3>
         </header>
         <div className="loginFormContainer">
         <LoginForm/>

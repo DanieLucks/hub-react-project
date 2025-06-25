@@ -9,7 +9,7 @@ export const Dashboard = () => {
     return (
         <>
         <header>
-            <h1>Kenzie Hub</h1>
+            <h1>DyLuck Hub</h1>
             <button onClick={ exit } className="button_gray">Sair</button>
         </header>
         <div className="infos">
