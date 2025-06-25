@@ -1,4 +1,4 @@
-import { RoutesMain } from "./routes/routesMain"
+import { RoutesMain } from "./routes/RoutesMain.jsx"
 import "./styles/globalButtonsStyles.scss"
 import "./styles/globalFontStyles.scss"
 import "./styles/globalStyles.scss"
